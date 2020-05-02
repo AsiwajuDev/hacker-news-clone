@@ -1,8 +1,8 @@
-import { injectGlobal } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { colorsDark } from "./palette";
 
 const setGlobalStyles = () =>
-  injectGlobal`
+  createGlobalStyle`
     * {
       box-sizing: border-box;
     }
