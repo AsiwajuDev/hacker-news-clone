@@ -1,16 +1,16 @@
-import { applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import { createLogger } from "redux-logger";
+import { applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 
-const isProd = process.env.NODE_ENV === "production";
-const midddlewareList = [];
+const isProd = process.env.NODE_ENV === 'production';
+const middlewareList = [];
 
-midddlewareList.push(thunk);
+middlewareList.push(thunk);
 
 if (!isProd) {
-  midddlewareList.push(createLogger());
+  middlewareList.push(createLogger());
 }
 
-const middleware = compose(applyMiddleware(...midddlewareList));
+const middleware = compose(applyMiddleware(...middlewareList));
 
 export default middleware;
